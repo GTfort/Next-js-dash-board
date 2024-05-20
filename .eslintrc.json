@@ -1,3 +1,26 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": ["stylelint"],
+  "rules": {
+    "stylelint/at-rule-no-unknown": [
+      "error",
+      {
+        "configFile": ".stylelintrc",
+        "rules": {
+          "at-rule-no-unknown": [
+            true,
+            {
+              "ignoreAtRules": [
+                "tailwind",
+                "apply",
+                "variants",
+                "responsive",
+                "screen"
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
 }
